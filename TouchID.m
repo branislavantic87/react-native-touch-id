@@ -70,7 +70,7 @@ RCT_EXPORT_METHOD(authenticate: (NSString *)reason
          }];
 
         // Device does not support TouchID but user wishes to use passcode fallback
-    } else if ([passcodeFallback boolValue] && [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&error]) {
+    } else if ([passcodeFallback boolValue] && [passcodeFallback boolValue] && [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&error]) {
         // Attempt Authentification
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication
                 localizedReason:reason
